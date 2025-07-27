@@ -1,0 +1,24 @@
+[project]
+name = "etlegacy-libs"
+authors = ["ET:Legacy Team"]
+version = "0.0.0"
+channels = [
+    "conda-forge",
+]
+
+platforms = ["linux-64", "osx-64", "win-64"]
+
+[tasks]
+"ci" = { cmd = ["python", "./ci.py"] }
+
+[dependencies]
+"python" = "3.13.3.*"
+
+
+[feature.actionlint.tasks]
+actionlint = { cmd = ["actionlint"] }
+[feature.actionlint.dependencies]
+"actionlint"   = "1.7.7.*"
+
+[environments]
+actionlint = ["actionlint"]
